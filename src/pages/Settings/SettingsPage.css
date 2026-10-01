@@ -1,0 +1,132 @@
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+}
+
+.settings-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.settings-card-column {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.settings-content {
+  min-width: 0;
+}
+
+.settings-content h2 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.settings-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.settings-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.settings-fields .form-group {
+  margin-top: 0;
+}
+
+.settings-fields input,
+.settings-fields select,
+.settings-select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.settings-fields input:focus,
+.settings-fields select:focus,
+.settings-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.settings-time-row {
+  grid-template-columns: 1fr 1fr;
+}
+
+.settings-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-toggle input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--primary);
+}
+
+.settings-select {
+  width: 150px;
+}
+
+.settings-save {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings-save .primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+@media (max-width: 767px) {
+  .settings-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .settings-fields,
+  .settings-time-row {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-select {
+    width: 100%;
+  }
+
+  .settings-toggle {
+    width: fit-content;
+  }
+
+  .settings-save {
+    width: 100%;
+  }
+
+  .settings-save .primary-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

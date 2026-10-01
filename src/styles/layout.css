@@ -1,0 +1,175 @@
+/* This is only for the main application layout and top bar. */
+
+/* =================================
+   Application Layout
+================================= */
+
+.app-content {
+  min-width: 0;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 32px;
+
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* =================================
+   Theme Toggle
+================================= */
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  transition: background-color 0.15s ease;
+}
+
+.icon-button:hover {
+  background: var(--surface-secondary);
+}
+
+/* =================================
+   Profile
+================================= */
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: white;
+
+  font-weight: 600;
+}
+
+/* =================================
+   Tablet
+================================= */
+
+@media (max-width: 1023px) {
+  .main-content {
+    padding: 24px;
+  }
+}
+
+/* =================================
+   Mobile
+================================= */
+
+@media (max-width: 767px) {
+  .app {
+    display: block;
+    padding-bottom: 72px;
+  }
+
+  .app-content {
+    min-height: auto;
+  }
+
+  .topbar {
+    height: 64px;
+
+    padding: 0 16px;
+
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
+  }
+
+  .main-content {
+    padding: 20px 16px;
+  }
+}
+
+
+/* =================================
+   User Menu
+================================= */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-name {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.logout-button {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 8px 12px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.logout-button:hover {
+  background: var(--surface-secondary);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+}
+
+
+@media (max-width: 767px) {
+  .user-name {
+    display: none;
+  }
+
+  .logout-button {
+    padding: 8px 10px;
+  }
+}

@@ -1,0 +1,128 @@
+/* =================================
+   Recipients Page
+================================= */
+
+.recipients-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.recipient-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 18px 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.recipient-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.recipient-name {
+  font-weight: 600;
+}
+
+.recipient-number {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.recipient-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =================================
+   Mobile
+================================= */
+
+@media (max-width: 767px) {
+  .recipient-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .recipient-actions {
+    width: 100%;
+  }
+}
+
+.recipient-enabled,
+.recipient-disabled {
+  width: fit-content;
+  margin-top: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.recipient-enabled {
+  background: var(--primary-soft);
+  color: var(--success);
+}
+
+.recipient-disabled {
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+}
+
+.recipient-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.danger-button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--danger);
+}
+
+.danger-button:hover {
+  background: #fef2f2;
+}
+
+.recipient-form {
+  width: 100%;
+  max-width: 700px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .recipient-form {
+    padding: 20px;
+  }
+
+  .recipient-actions button {
+    flex: 1;
+  }
+
+  .danger-button {
+    flex: 0 0 40px !important;
+  }
+}

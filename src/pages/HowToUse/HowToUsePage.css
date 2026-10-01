@@ -1,0 +1,212 @@
+.how-to-use-page {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+}
+
+.how-to-hero {
+  padding: 80px 5% 55px;
+  text-align: center;
+}
+
+.how-to-hero > span {
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.how-to-hero h1 {
+  max-width: 800px;
+  margin: 14px auto;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.how-to-hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.steps-section {
+  padding: 30px 5% 70px;
+}
+
+.steps-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.how-to-step {
+  display: grid;
+  grid-template-columns: 60px 56px 1fr;
+  align-items: start;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.step-number {
+  padding-top: 8px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.step-content h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.step-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.important-note {
+  max-width: 900px;
+  margin: 20px auto 70px;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.important-note h2 {
+  margin-top: 0;
+}
+
+.important-note p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.time-example {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0;
+  font-weight: 600;
+}
+
+.time-line {
+  flex: 1;
+  height: 6px;
+  position: relative;
+  border-radius: 999px;
+  background: var(--primary-soft);
+}
+
+.time-point {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.note-text {
+  font-size: 0.9rem;
+}
+
+.getting-started {
+  padding: 70px 5%;
+  text-align: center;
+  background: var(--surface);
+}
+
+.getting-started h2 {
+  margin: 0 0 10px;
+}
+
+.getting-started p {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+}
+
+.getting-started .primary-button {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .how-to-hero {
+    padding: 55px 5% 35px;
+  }
+
+  .how-to-step {
+    grid-template-columns: 40px 48px 1fr;
+    gap: 12px;
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .important-note {
+    margin: 10px 5% 50px;
+    padding: 22px;
+  }
+
+  .time-example {
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+}
+
+
+.privacy-info {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  padding: 26px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--primary-soft);
+}
+
+.privacy-info-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.privacy-info h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.privacy-info p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .privacy-info {
+    margin: 0 5% 50px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,305 @@
+/* =================================
+   Schedule Form
+================================= */
+
+.schedule-form {
+  width: 100%;
+  max-width: 900px;
+
+  padding: 28px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* =================================
+   Form Sections
+================================= */
+
+.form-section {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section:last-of-type {
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.form-section h2 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+}
+
+.section-description {
+  margin: 0 0 20px;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+/* =================================
+   Form Fields
+================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select,
+.date-input-row input {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--surface);
+  color: var(--text);
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+.date-input-row input:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.form-group textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+.form-help {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+}
+
+/* =================================
+   Time Fields
+================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+}
+
+/* =================================
+   Checkbox
+================================= */
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  width: 17px;
+  height: 17px;
+
+  accent-color: var(--primary);
+}
+
+/* =================================
+   Excluded Dates
+================================= */
+
+.date-input-row {
+  display: flex;
+
+  gap: 12px;
+}
+
+.date-input-row input {
+  max-width: 220px;
+}
+
+.date-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--surface-secondary);
+
+  font-size: 14px;
+}
+
+.remove-date-button {
+  border: 0;
+
+  background: transparent;
+  color: var(--danger);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =================================
+   Form Actions
+================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding-top: 4px;
+}
+
+/* =================================
+   Mobile
+================================= */
+
+@media (max-width: 767px) {
+  .schedule-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .date-input-row {
+    flex-direction: column;
+  }
+
+  .date-input-row input {
+    max-width: none;
+  }
+
+  .date-input-row .secondary-button {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+
+.recipient-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recipient-selection-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.recipient-selection-item:hover {
+  background: var(--surface-secondary);
+}
+
+.recipient-selection-item input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+}
+
+.recipient-selection-item span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.recipient-selection-item strong {
+  font-size: 14px;
+}
+
+.recipient-selection-item small {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.recipient-selection-empty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--surface-secondary);
+}
+
+.recipient-selection-empty p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 767px) {
+  .recipient-selection-empty {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

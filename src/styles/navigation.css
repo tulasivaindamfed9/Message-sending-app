@@ -1,0 +1,200 @@
+/* This contains the desktop sidebar + mobile navigation. */
+
+/* =================================
+   Sidebar
+================================= */
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  min-height: 100vh;
+
+  padding: 24px 16px;
+
+  background: var(--nav-background);
+  border-right: 1px solid var(--nav-border);
+
+  color: var(--nav-text);
+}
+
+/* =================================
+   Sidebar Logo
+================================= */
+
+.sidebar-logo,
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-logo {
+  padding: 0 8px 28px;
+}
+
+.sidebar-logo strong,
+.mobile-brand strong {
+  display: block;
+
+  font-size: 15px;
+  color: var(--nav-text);
+}
+
+.sidebar-logo span,
+.mobile-brand span {
+  display: block;
+
+  font-size: 12px;
+  color: var(--nav-text-secondary);
+}
+
+/* =================================
+   Logo
+================================= */
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =================================
+   Sidebar Navigation
+================================= */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  border-radius: 8px;
+
+  color: var(--nav-text-secondary);
+  text-decoration: none;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.nav-link:hover {
+  background: var(--nav-active);
+  color: var(--nav-text);
+}
+
+.nav-link.active {
+  background: var(--primary);
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+/* =================================
+   Mobile Brand
+================================= */
+
+.mobile-brand {
+  display: none;
+}
+
+/* =================================
+   Mobile Navigation
+================================= */
+
+.mobile-nav {
+  display: none;
+}
+
+/* =================================
+   Tablet
+================================= */
+
+@media (max-width: 1023px) {
+  .sidebar {
+    width: 220px;
+  }
+}
+
+/* =================================
+   Mobile
+================================= */
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-brand {
+    display: flex;
+  }
+
+  .mobile-brand .logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mobile-nav {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 20;
+
+    height: 72px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background: var(--nav-background);
+    border-top: 1px solid var(--nav-border);
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    color: var(--nav-text-secondary);
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .mobile-nav-link:hover {
+    background: var(--nav-active);
+    color: var(--nav-text);
+  }
+
+  .mobile-nav-link.active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+}

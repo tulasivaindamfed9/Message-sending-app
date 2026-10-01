@@ -1,0 +1,126 @@
+.schedules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.schedule-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.schedule-card-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.schedule-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.schedule-card h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.schedule-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.schedule-status-disabled {
+  background: var(--surface-secondary);
+  color: var(--text-secondary);
+}
+
+.schedule-message {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.schedule-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.schedule-details span {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.schedule-details strong {
+  color: var(--text);
+}
+
+.schedule-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.schedule-card-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.danger-button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--danger);
+}
+
+.danger-button:hover {
+  background: #fef2f2;
+}
+
+@media (max-width: 767px) {
+  .schedule-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .schedule-card-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .schedule-card-actions {
+    width: 100%;
+  }
+
+  .schedule-card-actions .secondary-button {
+    flex: 1;
+  }
+}
