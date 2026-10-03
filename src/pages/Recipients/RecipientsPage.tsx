@@ -13,9 +13,17 @@ function RecipientsPage() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const recipients = useAppSelector(
-    (state) => state.recipients.recipients,
-  );
+  const currentUser = useAppSelector(
+  (state) => state.auth.currentUser,
+);
+
+// now user A can only see his own recipients and not user B's recipients.
+//  This is done by filtering the recipients based on the current user's ID.
+  const recipients = useAppSelector((state) =>
+  state.recipients.recipients.filter(
+    (recipient) => recipient.userId === currentUser?.id,
+  ),
+);
 
   return (
     <div className="page">

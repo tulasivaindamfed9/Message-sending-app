@@ -3,9 +3,15 @@ import CalendarView from "./CalendarView";
 import "./CalendarPage.css";
 
 function CalendarPage() {
-  const schedules = useAppSelector(
-    (state) => state.schedules.schedules,
-  );
+  const currentUser = useAppSelector(
+  (state) => state.auth.currentUser,
+);
+
+const schedules = useAppSelector((state) =>
+  state.schedules.schedules.filter(
+    (schedule) => schedule.userId === currentUser?.id,
+  ),
+);
 
   const excludedDates = schedules.flatMap(
     (schedule) => schedule.excludedDates,

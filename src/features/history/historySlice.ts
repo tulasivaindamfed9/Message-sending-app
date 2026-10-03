@@ -12,6 +12,7 @@ export type HistorySkipReason =
 
 export interface HistoryItem {
   id: string;
+  userId: string;
   scheduleId: string;
   scheduleName: string;
   recipientId: string;

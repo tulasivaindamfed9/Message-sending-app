@@ -13,13 +13,21 @@ import "./DashboardPage.css";
 function DashboardPage() {
   const navigate = useNavigate();
 
-  const schedules = useAppSelector(
-    (state) => state.schedules.schedules,
+  const currentUser = useAppSelector(
+    (state) => state.auth.currentUser,
   );
 
-  const recipients = useAppSelector(
-    (state) => state.recipients.recipients,
-  );
+ const schedules = useAppSelector((state) =>
+  state.schedules.schedules.filter(
+    (schedule) => schedule.userId === currentUser?.id,
+  ),
+);
+
+const recipients = useAppSelector((state) =>
+  state.recipients.recipients.filter(
+    (recipient) => recipient.userId === currentUser?.id,
+  ),
+);
 
   const activeSchedules = schedules.filter(
     (schedule) => schedule.enabled,

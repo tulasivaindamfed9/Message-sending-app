@@ -2,6 +2,7 @@ import  { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export interface Schedule {
   id: string;
+  userId: string;
   name: string;
   message: string;
 

@@ -2,6 +2,7 @@ import { createSlice,type PayloadAction } from "@reduxjs/toolkit";
 
 export interface Recipient {
   id: string;
+  userId: string;
   name: string;
   phoneNumber: string;
   enabled: boolean;

@@ -9,9 +9,15 @@ import { useAppSelector } from "../../app/hooks";
 function ScheduleForm() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  
+  const currentUser = useAppSelector(
+  (state) => state.auth.currentUser,
+);
 
-  const recipients = useAppSelector(
-  (state) => state.recipients.recipients,
+  const recipients = useAppSelector((state) => 
+  state.recipients.recipients.filter(
+    (recipient) => recipient.userId === currentUser?.id,
+  ),
 );
 
 const [recipientIds, setRecipientIds] = useState<string[]>([]);
@@ -54,6 +60,7 @@ const [recipientIds, setRecipientIds] = useState<string[]>([]);
   
     const newSchedule = {
       id: crypto.randomUUID(),
+      userId: currentUser!.id,
       name,
       message,
       startTime,

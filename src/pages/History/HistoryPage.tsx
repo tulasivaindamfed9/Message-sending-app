@@ -5,9 +5,15 @@ import { useAppSelector } from "../../app/hooks";
 import "./HistoryPage.css";
 
 function HistoryPage() {
-  const history = useAppSelector(
-    (state) => state.history.items,
-  );
+ const currentUser = useAppSelector(
+  (state) => state.auth.currentUser,
+);
+
+const historyItems = useAppSelector((state) =>
+  state.history.items.filter(
+    (item) => item.userId === currentUser?.id,
+  ),
+);
 
   const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString("en-IN", {
@@ -42,7 +48,7 @@ function HistoryPage() {
         </div>
       </div>
 
-      {history.length === 0 ? (
+      {historyItems.length === 0 ? (
         <div className="empty-state">
           <Clock3 size={32} />
 
@@ -55,7 +61,7 @@ function HistoryPage() {
         </div>
       ) : (
         <div className="history-list">
-          {history.map((item) => (
+          {historyItems.map((item) => (
             <div className="history-item" key={item.id}>
               <div className="history-message">
                 <strong>{item.scheduleName}</strong>
